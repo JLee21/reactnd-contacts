@@ -23,7 +23,3 @@ class UserMovie extends Component {
 }
 
 export default UserMovie
-
-// <p> {this.props.users[profile.id]} favorite movie is
-//     {this.props.movies[profile.favoriteMovieID]}
-// </p>

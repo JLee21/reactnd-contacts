@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import logo from './logo.svg';
-import UserMovie from './UserMovie'
-import PopularMovie from './PopularMovie'
+import './App.css';
 
 /*
-Use React and the data below to display a list of users alongside their favorite movies.
+Display a list of movies where each movie contains a list of users that favorited it.
 
 For detailed instructions, refer to instructions.md.
 */
@@ -46,7 +44,7 @@ const profiles = [
 const users = {
   1: {
     id: 1,
-    name: 'Jane Cruz',
+    name: 'Jane Jones',
     userName: 'coder',
   },
   2: {
@@ -79,7 +77,7 @@ const users = {
 const movies = {
   1: {
     id: 1,
-    name: 'Planet Earth 1',
+    name: 'Planet Earth',
   },
   2: {
     id: 2,
@@ -99,22 +97,15 @@ const movies = {
   },
 };
 
-const noMovieLike = 'None of the current users liked this movie';
-
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <h2>Favorite Movies</h2>
-        <UserMovie profiles={profiles} users={users} movies={movies} />
-
-        {console.log('one', movies[1])}
-
-        <PopularMovie profiles={profiles} users={users} movies={movies} />
+        <h2>How Popular is Your Favorite Movie?</h2>
       </div>
     );
   }
