@@ -68,7 +68,7 @@ class Game extends Component {
         <div className="equation">
           <p className="text">{`${value1} + ${value2} + ${value3} = ${proposedAnswer}`}</p>
         </div>
-        <button onClick={this.handleAnswer} name="true">
+        <button name="true" onClick={this.handleAnswer}>
           True
         </button>
         <button name="false" onClick={this.handleAnswer}>

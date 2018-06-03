@@ -5,9 +5,9 @@ body {
   color: #306482;
 }
 
-h2 {
+/* h2 {
   text-decoration: underline overline dotted #306482;
-}
+} */
 
 .game {
   font-size: 2em;
@@ -19,7 +19,7 @@ h2 {
 }
 
 button {
-  background: #38aceb;
+  background: white;
   background-image: -webkit-linear-gradient(top, #38aceb, #236e96);
   background-image: -moz-linear-gradient(top, #38aceb, #236e96);
   background-image: -ms-linear-gradient(top, #38aceb, #236e96);
