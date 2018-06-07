@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class MessageHistory extends Component {
+const MessageHistory = props => {
 
-  const { user, messages } = this.props
+  const { user, messages } = props
 
-  render () {
+  return (
     <ul className="message-list">
       {messages.map((message, index) => (
         <li
@@ -19,6 +19,6 @@ class MessageHistory extends Component {
         </li>
       ))}
     </ul>
-  }
+  )
 }
 export default MessageHistory

@@ -3,22 +3,20 @@ import PropTypes from 'prop-types';
 
 class AddMessage extends Component {
 
-  const { user, handleMessage } = this.props
-
   state = {
-    message: ''
+    message: '',
   }
 
   onSubmitMessage = event => {
     event.preventDefault();
-    const { user, text } = event.target
-    handleMessage(this.state.message)
+    this.props.handleMessage(this.state.message)
   }
 
   onInputChange = event => {
-    this.setState(() => (
-      message: event.target.value.trim()
-    ))
+    const { value } = event.target
+    this.setState(() => ({
+      message: value,
+    }));
   }
 
   isDisabled = () => {
@@ -26,21 +24,26 @@ class AddMessage extends Component {
   };
 
   render () {
-    <div>
-      <form className="input-group">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Enter your message..."
-          onChange={this.onInputChange}
-        />
-        <div className="input-group-append">
-          <button className="btn submit-button" disabled={this.isDisabled()}>
-            SEND
-          </button>
-        </div>
-      </form>
-    </div>
+    const { message } = this.state;
+
+    return (
+      <div>
+        <form onSubmit={this.onSubmitMessage} className="input-group">
+          <input
+            type="text"
+            value={message}
+            className="form-control"
+            placeholder="Enter your message..."
+            onChange={this.onInputChange}
+          />
+          <div className="input-group-append">
+            <button className="btn submit-button" disabled={this.isDisabled()}>
+              SEND
+            </button>
+          </div>
+        </form>
+      </div>
+    )
   }
 }
 
