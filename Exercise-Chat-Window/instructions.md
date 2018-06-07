@@ -14,7 +14,17 @@ React applications:
 
 #### Step 1. Break down the app into a hierarchy of components. Draw a box around each React component.
 
+App                 holds all messages, and users
+
+  ChatWindow x2     one per user, holds users or creates window based on user.
+    MessageHistory  old messages
+    AddMessage      new messages
+
 #### Step 2. Determine the data in our app.
+
+* users
+* messages => user, content
+* message new
 
 #### Step 3. Figure out the data that should be a part of our state:
 

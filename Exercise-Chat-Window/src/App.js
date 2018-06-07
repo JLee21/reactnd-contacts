@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import ChatWindow from './ChatWindow'
 /*
 This exercise will help you practice many of your newly aquired React skills.
 
@@ -17,15 +17,21 @@ const messages = [
 ];
 
 class App extends Component {
-  /*
-  If the user did not type anything, he/she should not be
-  allowed to submit.
-  */
-  isDisabled = () => {
-    return false;
-  };
+
+  state = {
+    messages: {}
+  }
+
+  handleMessage = (username, text) => {
+    this.setState(currState => (
+      {[...currState, {username: username, text: text}]}
+    ))
+  })
 
   render() {
+
+    const { }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -33,6 +39,16 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <div className="container">
+
+          {this.users.map(user => (
+            <ChatWindow
+              user={user}
+              messages={messages}
+              handleMessage={this.handleMessage}
+            />
+
+          ))}
+
           <div className="chat-window">
             <h2>Super Awesome Chat</h2>
             <div className="name sender">{users[0].username}</div>
