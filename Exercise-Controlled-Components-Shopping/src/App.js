@@ -14,8 +14,6 @@ class App extends React.Component {
 
   handleAddItem = item => {
     this.setState(prevState => ({ items: [...prevState.items, item] }));
-    console.log(...this.state.items);
-    // console.log(`New Items: ${...this.state.items}`);
   };
 
   handleDeleteLastItem = event => {

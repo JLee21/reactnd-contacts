@@ -79,3 +79,7 @@ button:disabled {
 .error {
   color: red;
 }
+
+.hideGames {
+  visibility: hidden;
+}
